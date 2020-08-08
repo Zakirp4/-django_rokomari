@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+<div class="card">
+    <div class="card-header">Publication List</div>
+    <div class="card-body">
+        <table class="table">
+            <tr>
+                <th>S/L</th>
+                <th>Name</th>
+            </tr>
+            {% for publication in publications %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'publication_detail' publication.pk %}">{{ publication.name }}</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

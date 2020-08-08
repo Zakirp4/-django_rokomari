@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+<div class="card">
+    <div class="card-header">Subject Detail</div>
+    <div class="card-body">
+        <h1>{{ subject.name }}</h1>
+        <p>{{ subject.description }}</p>
+    </div>
+</div>
+
+{% endblock %}
