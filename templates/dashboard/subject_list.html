@@ -3,17 +3,27 @@
 
 {% block content %}
 <div class="card">
-    <div class="card-header">Subject List</div>
+
+        <div class="card-header">
+            Subject List
+            <a href="{% url 'subject_create' %}" class="btn btn-success float-right">Create New</a>
+
+    </div>
     <div class="card-body">
         <table class="table">
             <tr>
                 <th>S/L</th>
                 <th>Name</th>
+                <th>Action</th>
             </tr>
             {% for subject in subjects %}
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td><a href="{% url 'subject_detail' subject.pk %}">{{ subject.name }}</a></td>
+                <td>
+                        <a href="{% url 'subject_edit' subject.pk %} " class="btn btn-primary">Edit</a>
+                        <a href="{% url 'subject_delete' subject.pk %} " class="btn btn-danger">Delete</a>
+                </td>
             </tr>
             {% endfor %}
 
